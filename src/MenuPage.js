@@ -1,5 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Navbar from "./Navbar";
 
 export default function MenuPage() {
-  return <h1>Hello M</h1>;
+  return (
+    <Fragment>
+      <Navbar />
+      <h1>Hello from M</h1>
+    </Fragment>
+  );
 }

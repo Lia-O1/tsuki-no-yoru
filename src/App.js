@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./HomePage";
@@ -7,7 +7,7 @@ import ReservationsPage from "./ReservationsPage";
 
 function App() {
   return (
-    <Fragment className="App">
+    <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -15,7 +15,7 @@ function App() {
           <Route path="/reservations" element={<ReservationsPage />} />
         </Routes>
       </Router>
-    </Fragment>
+    </div>
   );
 }
 

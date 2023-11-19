@@ -1,5 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Navbar from "./Navbar";
 
 export default function ReservationsPage() {
-  return <h1>Hello R</h1>;
+  return (
+    <Fragment>
+      <Navbar />
+      <h1>Hello from R</h1>
+    </Fragment>
+  );
 }
