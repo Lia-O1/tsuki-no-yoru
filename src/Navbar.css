@@ -25,3 +25,11 @@
   justify-content: flex-end;
   text-align: right;
 }
+
+.Navbar .white {
+  color: #fff;
+}
+.navbar-toggler {
+  border: 0.5px solid white !important;
+  color: white !important;
+}

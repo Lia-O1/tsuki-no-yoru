@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { NavLink, useMatch } from "react-router-dom";
+import LineIcon from "react-lineicons";
 import "./Navbar.css";
 import logo from "./images/logo.png";
 
@@ -16,7 +17,7 @@ export default function Navbar() {
           </NavLink>
           <button
             onClick={toggle}
-            className={`navbar-toggler ${isOpen ? "" : "collapsed"}`}
+            className={`navbar-toggler  ${isOpen ? "" : "collapsed"}`}
             type="button"
             data-toggle="collapse"
             data-target="#navbarNav"
@@ -24,12 +25,11 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <LineIcon name="menu" style={{ color: "white" }} />
           </button>
-
           <div
             className={`${
-              isOpen ? "collapse show" : "collapse"
+              isOpen ? "collapse show " : "collapse"
             } navbar-collapse`}
             id="navbarNav"
           >
