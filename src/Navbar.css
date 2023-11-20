@@ -19,3 +19,9 @@
 .Navbar img {
   height: 60px;
 }
+
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
