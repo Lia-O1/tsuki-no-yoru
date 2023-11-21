@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/Welcome.css";
 
 export default function Welcome() {
   return (
-    <div className="d-flex justify-content-center align-items-center Welcome">
+    <div className="d-flex justify-content-center align-items-center position-relative Welcome">
       <div className="d-flex flex-column justify-content-center align-items-cente text-center bg">
         <h1 className="mb-0">TSUKI NO YORU</h1>
 
@@ -11,7 +12,12 @@ export default function Welcome() {
           | SAVOR THE AUTHENTIC FLAVOURS OF JAPAN WITH EVERY BITE |
         </p>
 
-        <button className="mt-2">BOOK A TABLE</button>
+        <button className="mt-2">
+          {" "}
+          <NavLink to="/reservations" className="link">
+            BOOK A TABLE
+          </NavLink>
+        </button>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@
   transition: all 250ms ease-in-out;
 }
 .Navbar .nav-link:hover {
-  color: #000;
+  color: #a86b4f;
 }
 .Navbar .nav-link.active {
   text-decoration: underline;
