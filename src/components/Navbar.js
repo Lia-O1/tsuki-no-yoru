@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { NavLink, useMatch } from "react-router-dom";
 import LineIcon from "react-lineicons";
-import "./Navbar.css";
-import logo from "./images/logo.png";
+import "../styles/Navbar.css";
+import logo from "../images/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

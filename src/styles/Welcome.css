@@ -1,0 +1,38 @@
+.Welcome {
+  background-image: url("../images/atmosphere.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #fff;
+  font-family: Hiro Misake, sans-serif;
+  position: relative;
+}
+
+.Welcome .bg {
+  background: rgba(0, 0, 0, 0.5);
+  width: 960px;
+  height: 350px;
+}
+
+.Welcome h1 {
+  font-size: 112px;
+  font-family: Hiro Misake, sans-serif;
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.Welcome p {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.Welcome button {
+  background: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  width: 30%;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}

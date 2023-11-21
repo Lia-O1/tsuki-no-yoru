@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 
-export default function HomePage() {
+export default function MenuPage() {
   return (
     <Fragment>
       <Navbar />
-      <h1>Hello from H</h1>
+      <h1>Hello from M</h1>
     </Fragment>
   );
 }
