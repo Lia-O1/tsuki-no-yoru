@@ -9,13 +9,13 @@ export default function About() {
     <div className="About">
       <div className="wrap">
         <div className="d-flex position-absolute bookmark">
-          <hr className="h-20 m-0" />
-          <span className="d-flex flex-column align-items-center justify-content-start px-1 pt-4 lh-sm bookmark-text">
+          <hr className="h-15 m-0" />
+          <span className="d-flex flex-column align-items-center justify-content-start px-1 pt-2 lh-sm bookmark-text">
             <span>月</span>
             <span>の</span>
             <span>夜</span>
           </span>
-          <hr className="h-20 m-0" />
+          <hr className="h-15 m-0" />
         </div>
         <div className="pt-5">
           <hr className="w-35 mx-auto" />

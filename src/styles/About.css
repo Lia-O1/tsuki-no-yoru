@@ -54,15 +54,15 @@
 
 .About .w-35 {
   width: 35vw;
-  height: 2.5px;
+  height: 2px;
 }
 
 .About .w-70 {
   width: 70vw;
-  height: 2.5px;
+  height: 2px;
 }
 
-.About .h-20 {
+.About .h-15 {
   width: 2.5px;
-  height: 20vw;
+  height: 15vw;
 }

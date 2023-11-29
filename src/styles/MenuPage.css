@@ -1,0 +1,39 @@
+.MenuPage {
+  background-image: url("../images/bg.jpg");
+  background-size: cover no-repeat;
+  background-position: center;
+  height: 100vh;
+  color: #fff;
+}
+.MenuPage .wrap {
+  background-color: rgba(0, 0, 0, 0.55);
+  height: 100vh;
+}
+
+.MenuPage h2 {
+  font-family: Hiro Misake, sans-serif;
+  font-size: 48px;
+}
+
+.MenuPage hr {
+  background-color: #fff;
+  opacity: 1;
+}
+.MenuPage .w-35 {
+  width: 35vw;
+  height: 2px;
+}
+
+.MenuPage .h-15 {
+  width: 2.5px;
+  height: 15vw;
+}
+
+.MenuPage .bookmark {
+  padding-top: 12vh;
+  max-width: 10vw;
+}
+
+.MenuPage .bookmark-text {
+  font-size: 32px;
+}
