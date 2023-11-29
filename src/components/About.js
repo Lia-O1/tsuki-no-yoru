@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div className="About">
       <div className="wrap">
-        <div className="d-flex position-absolute bookmark-1">
+        <div className="d-flex position-absolute bookmark">
           <hr className="h-20 m-0" />
           <span className="d-flex flex-column align-items-center justify-content-start px-1 pt-4 lh-sm bookmark-text">
             <span>月</span>
@@ -64,16 +64,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="position-relative bookmark-2-wrap">
-            <div className="d-flex position-relative bookmark-2">
-              <hr className="h-20 m-0" />
-              <span className="d-flex flex-column align-items-center justify-content-end px-1 pb-0 mb-0 lh-sm bookmark-text">
-                <span>月</span>
-                <span>の</span>
-                <span>夜</span>
-              </span>
-              <hr className="h-20 m-0" />
-            </div>
+          <div className="my-5">
             <hr className="d-flex justify-content-end m-0 w-35" />
             <hr className="mt-5 w-70" />
           </div>

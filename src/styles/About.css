@@ -1,6 +1,6 @@
 .About {
   background-image: url("../images/bg.jpg");
-  background-size: cover;
+  background-size: cover no-repeat;
   background-position: center;
   color: #fff;
   font-family: "Poppins", sans-serif;
@@ -47,18 +47,9 @@
 .About .bookmark-text {
   font-size: 40px;
 }
-.About .bookmark-1 {
+.About .bookmark {
   max-width: 10vw;
   right: 8%;
-}
-
-.About .bookmark-2 {
-  max-width: 10vw;
-  left: 8%;
-}
-
-.About .bookmark-2-wrap {
-  bottom: 35vh;
 }
 
 .About .w-35 {
