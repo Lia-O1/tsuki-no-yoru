@@ -7,17 +7,17 @@ export default function About() {
   return (
     <div className="About">
       <div className="wrap">
-        <div className="d-flex position-absolute bookmark">
-          <hr className="h-20" />
+        <div className="d-flex position-absolute bookmark-1">
+          <hr className="h-20 m-0" />
           <span className="d-flex flex-column align-items-center justify-content-start px-1 pt-4 lh-sm bookmark-text">
             <span>月</span>
             <span>の</span>
             <span>夜</span>
           </span>
-          <hr className="h-20" />
+          <hr className="h-20 m-0" />
         </div>
         <div className="pt-5">
-          <hr className="w-40" />
+          <hr className="w-35 mx-auto" />
           <h2 className="text-center pt-3 pb-3">ABOUT US</h2>
           <div className="d-flex pt-3">
             <div className="py-4 pe-4 image-wrap-left">
@@ -39,10 +39,12 @@ export default function About() {
               </p>
             </div>
           </div>
-          <hr />
-          <hr />
-          <h2 className="text-center pt-3 pb-3">OUR HISTORY</h2>
-          <div className="d-flex pt-3 justify-content-end">
+          <hr className="mt-5 mb-4 me-0 mx-auto w-70" />
+          <div className="d-flex justify-content-end align-items-center me-0">
+            <h2 className="me-5 pe-4">OUR HISTORY</h2>
+            <hr className="w-35 me-0 mt-1" />
+          </div>
+          <div className="d-flex justify-content-end pt-3">
             <div className="d-flex flex-column justify-content-center text-end me-5">
               <p>
                 Tsuki no Yoru was founded by Hiroshi Nakamura, who moved from
@@ -61,11 +63,19 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div>
-            <p>月の夜</p>
+          <div className="position-relative bookmark-2-wrap">
+            <div className="d-flex position-relative bookmark-2">
+              <hr className="h-20 m-0" />
+              <span className="d-flex flex-column align-items-center justify-content-end px-1 pb-0 mb-0 lh-sm bookmark-text">
+                <span>月</span>
+                <span>の</span>
+                <span>夜</span>
+              </span>
+              <hr className="h-20 m-0" />
+            </div>
+            <hr className="d-flex justify-content-end m-0 w-35" />
+            <hr className="mt-5 w-70" />
           </div>
-          <hr />
-          <hr />
         </div>
       </div>
     </div>

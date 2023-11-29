@@ -46,19 +46,31 @@
 .About .bookmark-text {
   font-size: 40px;
 }
-.About .bookmark {
+.About .bookmark-1 {
   max-width: 10vw;
-  left: 90%;
+  right: 8%;
 }
 
-.About .w-40 {
-  margin: 0 auto;
-  width: 40vw;
+.About .bookmark-2 {
+  max-width: 10vw;
+  left: 8%;
+}
+
+.About .bookmark-2-wrap {
+  bottom: 35vh;
+}
+
+.About .w-35 {
+  width: 35vw;
+  height: 2.5px;
+}
+
+.About .w-70 {
+  width: 70vw;
   height: 2.5px;
 }
 
 .About .h-20 {
-  margin: 0 auto;
   width: 2.5px;
   height: 20vw;
 }
