@@ -2,14 +2,12 @@
   background-image: url("../images/bg.jpg");
   background-size: cover;
   background-position: center;
-  height: 250vh;
   color: #fff;
   font-family: "Poppins", sans-serif;
 }
 
 .About .wrap {
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 250vh;
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 .About hr {
@@ -29,18 +27,21 @@
 }
 
 .About img {
-  width: 35vw;
+  width: 30vw;
   max-height: 85vh;
+  border: 2px solid #fff;
 }
 
 .About .image-wrap-left {
-  background-color: #fff;
-  padding-left: 10vw;
+  padding-left: 15vw;
+  border: 2px solid #fff;
+  border-left: none;
 }
 
 .About .image-wrap-right {
-  background-color: #fff;
-  padding-right: 10vw;
+  padding-right: 15vw;
+  border: 2px solid #fff;
+  border-right: none;
 }
 
 .About .bookmark-text {

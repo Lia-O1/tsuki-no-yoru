@@ -18,9 +18,9 @@ export default function About() {
         </div>
         <div className="pt-5">
           <hr className="w-35 mx-auto" />
-          <h2 className="text-center pt-3 pb-3">ABOUT US</h2>
+          <h2 className="text-center pt-2 pb-4">ABOUT US</h2>
           <div className="d-flex pt-3">
-            <div className="py-4 pe-4 image-wrap-left">
+            <div className="py-4 pe-4 me-5 image-wrap-left">
               <img src={showcase} alt="Meals" />
             </div>
             <div className="d-flex flex-column justify-content-center ms-5">
@@ -40,7 +40,7 @@ export default function About() {
             </div>
           </div>
           <hr className="mt-5 mb-4 me-0 mx-auto w-70" />
-          <div className="d-flex justify-content-end align-items-center me-0">
+          <div className="d-flex justify-content-end align-items-center me-0 mb-2">
             <h2 className="me-5 pe-4">OUR HISTORY</h2>
             <hr className="w-35 me-0 mt-1" />
           </div>
@@ -58,7 +58,7 @@ export default function About() {
               </p>
             </div>
             <div className="d-flex pt-3">
-              <div className="py-4 ps-4 image-wrap-right ">
+              <div className="py-4 ps-4 ms-5 image-wrap-right ">
                 <img src={chef} alt="Chef" />
               </div>
             </div>
