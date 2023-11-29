@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import showcase from "../images/showcase.jpg";
 import chef from "../images/chef.jpg";
 import "../styles/About.css";
@@ -77,6 +78,7 @@ export default function About() {
             <hr className="mt-5 w-70" />
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );
