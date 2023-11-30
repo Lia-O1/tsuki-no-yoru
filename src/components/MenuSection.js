@@ -6,13 +6,15 @@ export default function MenuSection({ title, items }) {
     <div className="MenuSection">
       <hr />
       <div className="d-flex position-absolute bookmark">
-        <hr className="m-0 h-15" />
-        <span className="d-flex flex-column align-items-center justify-content-start px-1 pt-2 lh-sm bookmark-text">
-          <span>月</span>
-          <span>の</span>
-          <span>夜</span>
+        <hr className="m-0 h-30" />
+        <span className="d-flex flex-column align-items-center justify-content-start text-uppercase px-1 pt-2 lh-sm bookmark-text">
+          {title.split("").map((letter, index) => (
+            <span key={index} className="px-1">
+              {letter}
+            </span>
+          ))}
         </span>
-        <hr className="m-0 h-15" />
+        <hr className="m-0 h-30" />
       </div>
       <br />
       <div className="my-5 p-3 mx-auto menu-bg">

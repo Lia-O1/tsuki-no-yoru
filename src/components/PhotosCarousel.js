@@ -10,7 +10,7 @@ import drinks from "../images/drinks.jpg";
 export default function PhotosCarousel() {
   return (
     <div className="PhotosCarousel">
-      <Carousel>
+      <Carousel className="pb-4">
         <Carousel.Item>
           <div className="d-flex justify-content-center carousel-item">
             <img className="mx-5 mb-5" src={meal1} alt="Meat" />

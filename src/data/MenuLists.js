@@ -28,7 +28,7 @@ export const salads = [
   { id: uuidv4(), item: "Seasoned Squid Salad (イカサラダ)", price: "$22.00" },
 ];
 
-export const sushiSashimi = [
+export const sushi = [
   {
     id: uuidv4(),
     item: "California Roll (カリフォルニアロール)",

@@ -3,7 +3,7 @@ import {
   entrees,
   mains,
   salads,
-  sushiSashimi,
+  sushi,
   soups,
   desserts,
 } from "../data/MenuLists";
@@ -18,6 +18,7 @@ export default function MenuPage() {
     <div className="MenuPage">
       <div className="wrap pt-5">
         <Navbar />
+        <br />
         <div className="pt-5">
           <div className="d-flex flex-column align-items-center justify-content-center mx-auto mb-4 bookmark">
             <hr className="w-35 mb-0" />
@@ -39,7 +40,7 @@ export default function MenuPage() {
           <MenuSection title="Entrees" items={entrees} />
           <MenuSection title="Mains" items={mains} />
           <MenuSection title="Salads" items={salads} />
-          <MenuSection title="Sushi & Sashimi" items={sushiSashimi} />
+          <MenuSection title="Sushi" items={sushi} />
           <MenuSection title="Soups" items={soups} />
           <MenuSection title="Desserts" items={desserts} />
         </div>
