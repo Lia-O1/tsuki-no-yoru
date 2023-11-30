@@ -1,0 +1,5 @@
+.PhotosCarousel img {
+  height: 40vh;
+  object-fit: contain;
+  border: 2px solid #fff;
+}

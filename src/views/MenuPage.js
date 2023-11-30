@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import PhotosCarousel from "../components/PhotosCarousel";
 import "../styles/MenuPage.css";
 
 export default function MenuPage() {
@@ -21,7 +22,8 @@ export default function MenuPage() {
           </div>
         </div>
         <h2 className="text-center pt-2 pb-2">MENU</h2>
-        <hr className="w-35 mx-auto" />
+        <hr className="w-35 mx-auto mb-5" />
+        <PhotosCarousel />
       </div>
     </div>
   );
