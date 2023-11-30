@@ -1,8 +1,16 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
+import {
+  entrees,
+  mains,
+  salads,
+  sushiSashimi,
+  soups,
+  desserts,
+} from "../data/MenuLists";
 import Navbar from "../components/Navbar";
 import PhotosCarousel from "../components/PhotosCarousel";
 import MenuSection from "../components/MenuSection";
+import Footer from "../components/Footer";
 import "../styles/MenuPage.css";
 
 export default function MenuPage() {
@@ -29,18 +37,14 @@ export default function MenuPage() {
           <PhotosCarousel />
           <div className="mb-4" />
           <MenuSection title="Entrees" items={entrees} />
+          <MenuSection title="Mains" items={mains} />
+          <MenuSection title="Salads" items={salads} />
+          <MenuSection title="Sushi & Sashimi" items={sushiSashimi} />
+          <MenuSection title="Soups" items={soups} />
+          <MenuSection title="Desserts" items={desserts} />
         </div>
+        <Footer />
       </div>
     </div>
   );
 }
-
-const entrees = [
-  { id: uuidv4(), item: "Edamame (枝豆)", price: "$12.00" },
-  { id: uuidv4(), item: "Gyoza (餃子)", price: "$16.00" },
-  { id: uuidv4(), item: "Takoyaki (たこ焼き)", price: "$18.00" },
-  { id: uuidv4(), item: "Yakitori (焼き鳥)", price: "$20.00" },
-  { id: uuidv4(), item: "Agedashi Tofu (揚げ出し豆腐)", price: "$16.00" },
-  { id: uuidv4(), item: "Karaage (唐揚げ)", price: "$18.00" },
-  { id: uuidv4(), item: "Tempura (天ぷら)", price: "$24.00" },
-];

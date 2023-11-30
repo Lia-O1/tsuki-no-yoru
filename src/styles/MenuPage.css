@@ -1,13 +1,12 @@
 .MenuPage {
   background-image: url("../images/bg.jpg");
-  background-size: cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  height: 200vh;
   color: #fff;
 }
 .MenuPage .wrap {
   background-color: rgba(0, 0, 0, 0.55);
-  height: 200vh;
 }
 
 .MenuPage h2 {

@@ -15,9 +15,9 @@ export default function MenuSection({ title, items }) {
         <hr className="m-0 h-15" />
       </div>
       <br />
-      <div className="mt-5 p-3 mx-auto menu-bg">
+      <div className="my-5 p-3 mx-auto menu-bg">
         <div className="menu-border py-3">
-          <div className="d-flex justify-content-center text-uppercase title">
+          <div className="d-flex justify-content-center text-uppercase text-center title">
             {title}
           </div>
           {items.map((item) => (
