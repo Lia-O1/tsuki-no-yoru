@@ -28,7 +28,7 @@ export default function MenuPage() {
           <hr className="w-35 mx-auto mb-5" />
           <PhotosCarousel />
           <div className="mb-4" />
-          <MenuSection />
+          <MenuSection title="Entrees" items={entrees} />
         </div>
       </div>
     </div>
@@ -36,6 +36,11 @@ export default function MenuPage() {
 }
 
 const entrees = [
-  { item: "Edamame(枝豆)", price: "$12.00" },
-  { item: "Gyoza (餃子)", price: "$16.00" },
+  { id: uuidv4(), item: "Edamame (枝豆)", price: "$12.00" },
+  { id: uuidv4(), item: "Gyoza (餃子)", price: "$16.00" },
+  { id: uuidv4(), item: "Takoyaki (たこ焼き)", price: "$18.00" },
+  { id: uuidv4(), item: "Yakitori (焼き鳥)", price: "$20.00" },
+  { id: uuidv4(), item: "Agedashi Tofu (揚げ出し豆腐)", price: "$16.00" },
+  { id: uuidv4(), item: "Karaage (唐揚げ)", price: "$18.00" },
+  { id: uuidv4(), item: "Tempura (天ぷら)", price: "$24.00" },
 ];

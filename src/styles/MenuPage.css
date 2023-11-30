@@ -47,8 +47,21 @@
 
 .MenuSection .menu-bg {
   background-color: rgba(0, 0, 0, 0.55);
+  max-width: 60vw;
 }
 
 .MenuSection .menu-border {
   border: 2px solid #fff;
+}
+
+.MenuSection .title {
+  font-family: Hiro Misake, sans-serif;
+  font-size: 48px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.MenuSection .menu-item {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
 }
