@@ -7,6 +7,8 @@ const ReservationForm = () => {
     date: "",
     time: "",
     guests: "",
+    email: "",
+    mobile: "",
   });
   const [showSummary, setShowSummary] = useState(false);
 
@@ -34,75 +36,115 @@ const ReservationForm = () => {
     <Form onSubmit={handleSubmit}>
       {!showSummary ? (
         <>
-          <Form.Group controlId="formName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-            />
-          </Form.Group>
+          <div className="d-flex flex-wrap justify-content-center my-5 form-gap">
+            <Form.Group controlId="formName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                className="text-uppercase mb-2 formInput"
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group controlId="formDate">
-            <Form.Label>Date</Form.Label>
-            <Form.Control
-              type="date"
-              name="date"
-              value={form.date}
-              onChange={handleChange}
-            />
-          </Form.Group>
+            <Form.Group controlId="formDate">
+              <Form.Label>Date</Form.Label>
+              <Form.Control
+                className="text-uppercase mb-2 formInput"
+                type="date"
+                name="date"
+                value={form.date}
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group controlId="formTime">
-            <Form.Label>Time</Form.Label>
-            <Form.Control
-              as="select"
-              name="time"
-              value={form.time}
-              onChange={handleChange}
-            >
-              <option value="">Select...</option>
-              <option value="17:00">5:00 PM</option>
-              <option value="17:30">5:30 PM</option>
-              <option value="18:00">6:00 PM</option>
-              <option value="18:30">6:30 PM</option>
-              <option value="19:00">7:00 PM</option>
-              <option value="19:30">7:30 PM</option>
-              <option value="20:00">8:00 PM</option>
-              <option value="20:30">8:30 PM</option>
-              <option value="21:00">9:00 PM</option>
-            </Form.Control>
-          </Form.Group>
+            <Form.Group controlId="formTime">
+              <Form.Label>Time</Form.Label>
+              <Form.Control
+                className="text-uppercase mb-2 formInput"
+                as="select"
+                name="time"
+                value={form.time}
+                onChange={handleChange}
+              >
+                <option value="" disabled>
+                  Select...
+                </option>
+                <option value="17:00">5:00 PM</option>
+                <option value="17:30">5:30 PM</option>
+                <option value="18:00">6:00 PM</option>
+                <option value="18:30">6:30 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="19:30">7:30 PM</option>
+                <option value="20:00">8:00 PM</option>
+                <option value="20:30">8:30 PM</option>
+                <option value="21:00">9:00 PM</option>
+              </Form.Control>
+            </Form.Group>
 
-          <Form.Group controlId="formGuests">
-            <Form.Label>Number of Guests</Form.Label>
-            <Form.Control
-              type="number"
-              name="guests"
-              value={form.guests}
-              onChange={handleChange}
-            />
-          </Form.Group>
+            <Form.Group controlId="formGuests">
+              <Form.Label>Number of Guests</Form.Label>
+              <Form.Control
+                className="text-uppercase mb-2 formInput"
+                type="number"
+                name="guests"
+                value={form.guests}
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Button variant="primary" onClick={handleNext}>
+            <Form.Group controlId="formEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                className="text-uppercase mb-2 formInput"
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formMobile">
+              <Form.Label>Mobile</Form.Label>
+              <Form.Control
+                className="text-uppercase mb-2 formInput"
+                type="tel"
+                name="mobile"
+                value={form.mobile}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </div>
+          <Button
+            className="d-flex justify-content-center text-uppercase form-button"
+            onClick={handleNext}
+          >
             Next
           </Button>
         </>
       ) : (
-        <>
-          <p>Name: {form.name}</p>
-          <p>Date: {form.date}</p>
-          <p>Time: {form.time}</p>
-          <p>Number of Guests: {form.guests}</p>
-
-          <Button variant="secondary" onClick={handleBack}>
-            Back
-          </Button>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </>
+        <div className="">
+          <div className="mx-auto wrap p-3 my-5">
+            <p>Name: {form.name}</p>
+            <p>Date: {form.date}</p>
+            <p>Time: {form.time}</p>
+            <p>Number of Guests: {form.guests}</p>
+            <p>Email: {form.email}</p>
+            <p>Mobile: {form.mobile}</p>
+          </div>
+          <div className="d-flex justify-content-center ">
+            <Button
+              className="text-uppercase mx-2 form-button"
+              onClick={handleBack}
+            >
+              Back
+            </Button>
+            <Button className="text-uppercase mx-2 form-button" type="submit">
+              Submit
+            </Button>
+          </div>
+        </div>
       )}
     </Form>
   );

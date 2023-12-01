@@ -10,6 +10,8 @@ export default function ReservationsPage() {
       <div className="wrap pt-5">
         <Navbar />
         <div className="m-5 p-5">
+          <h2 className="text-center">BOOK A TABLE</h2>
+          <hr className="mb-0 mx-auto w-40" />
           <BookingForm />
         </div>
         <Footer />

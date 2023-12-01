@@ -12,7 +12,7 @@ export default function Welcome() {
           | SAVOR THE AUTHENTIC FLAVOURS OF JAPAN WITH EVERY BITE |
         </p>
 
-        <button className="mt-2">
+        <button className="mt-2 form-button">
           {" "}
           <NavLink to="/reservations" className="link">
             BOOK A TABLE
