@@ -1,11 +1,19 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import BookingForm from "../components/BookingForm";
+import "../styles/ReservationsPage.css";
 
 export default function ReservationsPage() {
   return (
-    <Fragment>
-      <Navbar />
-      <h1>Hello from R</h1>
-    </Fragment>
+    <div className="ReservationsPage">
+      <div className="wrap pt-5">
+        <Navbar />
+        <div className="m-5 p-5">
+          <BookingForm />
+        </div>
+        <Footer />
+      </div>
+    </div>
   );
 }
