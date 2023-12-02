@@ -21,6 +21,17 @@ const ReservationForm = () => {
 
   const handleNext = (event) => {
     event.preventDefault();
+    const allFieldsFilled = Object.values(form).every((field) => field !== "");
+    if (!allFieldsFilled) {
+      alert("Please fill all the fields");
+      return;
+    }
+    const regex = /^04\d{8}$/;
+    if (!regex.test(form.mobile)) {
+      alert("Please enter a valid Australian mobile number.");
+      return;
+    }
+
     setShowSummary(true);
   };
 
