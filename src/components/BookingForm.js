@@ -26,6 +26,19 @@ const ReservationForm = () => {
       alert("Please fill all the fields");
       return;
     }
+
+    const guests = Number(form.guests);
+    if (!Number.isInteger(guests) || guests <= 0) {
+      alert("Please enter a valid number of guests.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
     const regex = /^04\d{8}$/;
     if (!regex.test(form.mobile)) {
       alert("Please enter a valid Australian mobile number.");
