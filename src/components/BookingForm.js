@@ -1,6 +1,71 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
+const validateName = (value) => {
+  if (!value) {
+    return "Please fill out this field.";
+  } else if (!/^[a-zA-Z\s]*$/.test(value)) {
+    return "Please enter a valid name.";
+  }
+  return "";
+};
+
+const validateDate = (value) => {
+  if (!value) {
+    return "Please fill out this field.";
+  } else {
+    const today = new Date();
+    const selectedDate = new Date(value);
+    if (selectedDate < today) {
+      return "Please select a date in the future.";
+    }
+  }
+  return "";
+};
+
+const validateTime = (value) => {
+  if (!value) {
+    return "Please fill out this field.";
+  }
+  return "";
+};
+
+const validateGuests = (value) => {
+  if (!value) {
+    return "Please fill out this field.";
+  } else {
+    const guests = Number(value);
+    if (!Number.isInteger(guests) || guests <= 0) {
+      return "Please enter a valid number of guests.";
+    }
+  }
+  return "";
+};
+
+const validateEmail = (value) => {
+  if (!value) {
+    return "Please fill out this field.";
+  } else {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      return "Please enter a valid email address.";
+    }
+  }
+  return "";
+};
+
+const validateMobile = (value) => {
+  if (!value) {
+    return "Please fill out this field.";
+  } else {
+    const mobileRegex = /^04\d{8}$/;
+    if (!mobileRegex.test(value)) {
+      return "Please enter a valid Australian mobile number.";
+    }
+  }
+  return "";
+};
+
 const ReservationForm = () => {
   const [form, setForm] = useState({
     name: "",
@@ -18,12 +83,36 @@ const ReservationForm = () => {
     email: "",
     mobile: "",
   });
+  const [showForm, setShowForm] = useState(true);
   const [showSummary, setShowSummary] = useState(false);
+  const [showSubmitMessage, setShowSubmitMessage] = useState(false);
 
   const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    let errorMessage = "";
+    if (name === "name") {
+      errorMessage = validateName(value);
+    } else if (name === "date") {
+      errorMessage = validateDate(value);
+    } else if (name === "time") {
+      errorMessage = validateTime(value);
+    } else if (name === "guests") {
+      errorMessage = validateGuests(value);
+    } else if (name === "email") {
+      errorMessage = validateEmail(value);
+    } else if (name === "mobile") {
+      errorMessage = validateMobile(value);
+    }
+
     setForm({
       ...form,
-      [event.target.name]: event.target.value,
+      [name]: value,
+    });
+
+    setErrors({
+      ...errors,
+      [name]: errorMessage,
     });
   };
 
@@ -77,21 +166,24 @@ const ReservationForm = () => {
       setErrors(newErrors);
       return;
     }
-
+    setShowForm(false);
     setShowSummary(true);
   };
 
   const handleBack = () => {
     setShowSummary(false);
+    setShowForm(true);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setShowSummary(false);
+    setShowSubmitMessage(true);
   };
 
   return (
     <Form onSubmit={handleSubmit}>
-      {!showSummary ? (
+      {showForm && (
         <>
           <div className="d-flex flex-wrap justify-content-center my-5 form-gap">
             <Form.Group controlId="formName">
@@ -182,12 +274,17 @@ const ReservationForm = () => {
           <Button
             className="d-flex justify-content-center text-uppercase form-button"
             onClick={handleNext}
+            disabled={
+              Object.values(form).some((value) => value === "") ||
+              Object.values(errors).some((error) => error !== "")
+            }
           >
             Next
           </Button>
         </>
-      ) : (
-        <div className="">
+      )}
+      {showSummary && !showForm && (
+        <div>
           <div className="mx-auto wrap p-3 my-5">
             <p>Name: {form.name}</p>
             <p>Date: {form.date}</p>
@@ -206,6 +303,15 @@ const ReservationForm = () => {
             <Button className="text-uppercase mx-2 form-button" type="submit">
               Submit
             </Button>
+          </div>
+        </div>
+      )}
+      {showSubmitMessage && !showForm && !showSummary && (
+        <div>
+          <div className="d-flex flex-column justify-content-center align-items-center text-center px-3 py-5 my-5 wrap-submit">
+            <p>Thank you, {form.name}! Your booking has been submitted.</p>
+            <p>Date: {form.date}</p>
+            <p className="mb-0">Time: {form.time}</p>
           </div>
         </div>
       )}

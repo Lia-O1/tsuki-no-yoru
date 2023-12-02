@@ -42,15 +42,27 @@
   font-size: 18px;
 }
 
-.ReservationsPage button:hover {
+.ReservationsPage .form-button:hover {
   background: none;
   border: 2px solid #a86b4f;
   color: #a86b4f;
 }
+
+.ReservationsPage .form-button:disabled {
+  background: #a86b4f;
+  border: 2px solid #a86b4f;
+  color: #fff;
+}
+
 .ReservationsPage .form-gap {
   gap: 2vh 5vw;
 }
 
 .ReservationsPage small {
   color: #fd151b;
+}
+
+.ReservationsPage .wrap-submit {
+  background-color: rgba(0, 0, 0, 0.55);
+  height: 30vh;
 }
