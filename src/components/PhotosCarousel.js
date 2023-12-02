@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import CircleLoader from "react-spinners/ClipLoader";
 import Carousel from "react-bootstrap/Carousel";
 import "../styles/PhotosCarousel.css";
 import meal1 from "../images/meal1-meat.jpg";
@@ -8,7 +9,27 @@ import meal4 from "../images/meal4-sashimi.jpg";
 import drinks from "../images/drinks.jpg";
 
 export default function PhotosCarousel() {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return isLoading ? (
+    <div className="d-flex justify-content-center">
+      <CircleLoader
+        color="#fff"
+        loading="true"
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+    </div>
+  ) : (
     <div className="PhotosCarousel">
       <Carousel className="pb-4">
         <Carousel.Item>
