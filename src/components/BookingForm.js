@@ -1,70 +1,13 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-
-const validateName = (value) => {
-  if (!value) {
-    return "Please fill out this field.";
-  } else if (!/^[a-zA-Z\s]*$/.test(value)) {
-    return "Please enter a valid name.";
-  }
-  return "";
-};
-
-const validateDate = (value) => {
-  if (!value) {
-    return "Please fill out this field.";
-  } else {
-    const today = new Date();
-    const selectedDate = new Date(value);
-    if (selectedDate < today) {
-      return "Please select a date in the future.";
-    }
-  }
-  return "";
-};
-
-const validateTime = (value) => {
-  if (!value) {
-    return "Please fill out this field.";
-  }
-  return "";
-};
-
-const validateGuests = (value) => {
-  if (!value) {
-    return "Please fill out this field.";
-  } else {
-    const guests = Number(value);
-    if (!Number.isInteger(guests) || guests <= 0) {
-      return "Please enter a valid number of guests.";
-    }
-  }
-  return "";
-};
-
-const validateEmail = (value) => {
-  if (!value) {
-    return "Please fill out this field.";
-  } else {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(value)) {
-      return "Please enter a valid email address.";
-    }
-  }
-  return "";
-};
-
-const validateMobile = (value) => {
-  if (!value) {
-    return "Please fill out this field.";
-  } else {
-    const mobileRegex = /^04\d{8}$/;
-    if (!mobileRegex.test(value)) {
-      return "Please enter a valid Australian mobile number.";
-    }
-  }
-  return "";
-};
+import {
+  validateName,
+  validateDate,
+  validateTime,
+  validateGuests,
+  validateEmail,
+  validateMobile,
+} from "./FormValidation.js";
 
 const ReservationForm = () => {
   const [form, setForm] = useState({
