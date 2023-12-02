@@ -50,3 +50,7 @@
 .ReservationsPage .form-gap {
   gap: 2vh 5vw;
 }
+
+.ReservationsPage small {
+  color: #fd151b;
+}

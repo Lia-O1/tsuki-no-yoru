@@ -10,6 +10,14 @@ const ReservationForm = () => {
     email: "",
     mobile: "",
   });
+  const [errors, setErrors] = useState({
+    name: "",
+    date: "",
+    time: "",
+    guests: "",
+    email: "",
+    mobile: "",
+  });
   const [showSummary, setShowSummary] = useState(false);
 
   const handleChange = (event) => {
@@ -21,27 +29,52 @@ const ReservationForm = () => {
 
   const handleNext = (event) => {
     event.preventDefault();
-    const allFieldsFilled = Object.values(form).every((field) => field !== "");
-    if (!allFieldsFilled) {
-      alert("Please fill all the fields");
-      return;
+
+    let newErrors = {
+      name: "",
+      date: "",
+      time: "",
+      guests: "",
+      email: "",
+      mobile: "",
+    };
+
+    if (!form.name) {
+      newErrors.name = "Please fill out this field.";
+    }
+    if (!form.date) {
+      newErrors.date = "Please fill out this field.";
+    }
+    if (!form.time) {
+      newErrors.time = "Please fill out this field.";
+    }
+    if (!form.guests) {
+      newErrors.guests = "Please fill out this field.";
+    } else {
+      const guests = Number(form.guests);
+      if (!Number.isInteger(guests) || guests <= 0) {
+        newErrors.guests = "Please enter a valid number of guests.";
+      }
+    }
+    if (!form.email) {
+      newErrors.email = "Please fill out this field.";
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(form.email)) {
+        newErrors.email = "Please enter a valid email address.";
+      }
+    }
+    if (!form.mobile) {
+      newErrors.mobile = "Please fill out this field.";
+    } else {
+      const mobileRegex = /^04\d{8}$/;
+      if (!mobileRegex.test(form.mobile)) {
+        newErrors.mobile = "Please enter a valid Australian mobile number.";
+      }
     }
 
-    const guests = Number(form.guests);
-    if (!Number.isInteger(guests) || guests <= 0) {
-      alert("Please enter a valid number of guests.");
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(form.email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    const regex = /^04\d{8}$/;
-    if (!regex.test(form.mobile)) {
-      alert("Please enter a valid Australian mobile number.");
+    if (Object.values(newErrors).some((error) => error !== "")) {
+      setErrors(newErrors);
       return;
     }
 
@@ -70,6 +103,7 @@ const ReservationForm = () => {
                 value={form.name}
                 onChange={handleChange}
               />
+              {errors.name && <small>{errors.name}</small>}
             </Form.Group>
 
             <Form.Group controlId="formDate">
@@ -81,6 +115,7 @@ const ReservationForm = () => {
                 value={form.date}
                 onChange={handleChange}
               />
+              {errors.date && <small>{errors.date}</small>}
             </Form.Group>
 
             <Form.Group controlId="formTime">
@@ -105,6 +140,7 @@ const ReservationForm = () => {
                 <option value="20:30">8:30 PM</option>
                 <option value="21:00">9:00 PM</option>
               </Form.Control>
+              {errors.time && <small>{errors.time}</small>}
             </Form.Group>
 
             <Form.Group controlId="formGuests">
@@ -116,6 +152,7 @@ const ReservationForm = () => {
                 value={form.guests}
                 onChange={handleChange}
               />
+              {errors.guests && <small>{errors.guests}</small>}
             </Form.Group>
 
             <Form.Group controlId="formEmail">
@@ -127,6 +164,7 @@ const ReservationForm = () => {
                 value={form.email}
                 onChange={handleChange}
               />
+              {errors.email && <small>{errors.email}</small>}
             </Form.Group>
 
             <Form.Group controlId="formMobile">
@@ -138,6 +176,7 @@ const ReservationForm = () => {
                 value={form.mobile}
                 onChange={handleChange}
               />
+              {errors.mobile && <small>{errors.mobile}</small>}
             </Form.Group>
           </div>
           <Button
