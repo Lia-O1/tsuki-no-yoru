@@ -6,7 +6,7 @@ import {
   sushi,
   soups,
   desserts,
-} from "../data/MenuLists";
+} from "../helpers/menuLists.js";
 import Navbar from "../components/Navbar";
 import PhotosCarousel from "../components/PhotosCarousel";
 import MenuSection from "../components/MenuSection";

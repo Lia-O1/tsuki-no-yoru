@@ -7,7 +7,7 @@ import {
   validateGuests,
   validateEmail,
   validateMobile,
-} from "./FormValidation.js";
+} from "../helpers/formValidation.js";
 
 const ReservationForm = () => {
   const [form, setForm] = useState({
