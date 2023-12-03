@@ -21,7 +21,7 @@ export default function MenuPage() {
         <br />
         <div className="pt-5">
           <div className="d-flex flex-column align-items-center justify-content-center mx-auto mb-4 bookmark">
-            <hr className="w-35 mb-0" />
+            <hr className="bookmark-top-w mb-0" />
             <div className="d-flex">
               <hr className="h-15 m-0" />
               <span className="d-flex flex-column align-items-center justify-content-start px-1 pt-2 lh-sm bookmark-text">

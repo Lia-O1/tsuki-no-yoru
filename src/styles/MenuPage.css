@@ -21,7 +21,7 @@
   margin: 0;
 }
 .MenuPage .w-35 {
-  width: 35vw;
+  width: 35%;
   height: 2px;
 }
 
@@ -31,7 +31,12 @@
 }
 
 .MenuPage .bookmark {
-  max-width: 10vw;
+  max-width: 10%;
+}
+
+.MenuPage .bookmark-top-w {
+  width: 100px;
+  height: 2px;
 }
 
 .MenuPage .bookmark-text {
@@ -42,12 +47,12 @@
 }
 
 .MenuSection .bookmark {
-  right: 8%;
+  right: 10px;
 }
 
 .MenuSection .menu-bg {
   background-color: rgba(0, 0, 0, 0.55);
-  max-width: 60vw;
+  max-width: 60%;
 }
 
 .MenuSection .menu-border {
@@ -72,4 +77,27 @@
 .MenuSection .h-30 {
   width: 2.5px;
   height: 30vh;
+}
+
+@media (max-width: 768px) {
+  .MenuPage h2 {
+    font-size: 48px;
+  }
+
+  .MenuPage .w-35 {
+    width: 70%;
+    height: 2px;
+  }
+
+  .MenuSection .menu-bg {
+    background-color: rgba(0, 0, 0, 0.55);
+    max-width: 90%;
+  }
+
+  .MenuSection .menu-item {
+    font-size: 16px;
+  }
+  .MenuSection .title {
+    font-size: 36px;
+  }
 }

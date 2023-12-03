@@ -66,9 +66,6 @@
 }
 
 @media (max-width: 768px) {
-  .About h2 {
-    font-size: 36px;
-  }
   .About .image-wrap-left {
     border-left: 2px solid #fff;
   }
