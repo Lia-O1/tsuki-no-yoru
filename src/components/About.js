@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div className="About">
       <div className="wrap">
-        <div className="d-flex position-absolute bookmark">
+        <div className="d-none d-md-flex position-absolute bookmark">
           <hr className="h-15 m-0" />
           <span className="d-flex flex-column align-items-center justify-content-start px-1 pt-2 lh-sm bookmark-text">
             <span>月</span>
@@ -17,15 +17,14 @@ export default function About() {
           </span>
           <hr className="h-15 m-0" />
         </div>
-        <div className="pt-5">
-          <hr className="w-35 mx-auto" />
-          <h2 className="text-center pt-2 pb-4">ABOUT US</h2>
-          <div className="d-flex pt-3">
-            <div className="py-4 pe-4 me-5 image-wrap-left">
-              <img src={showcase} alt="Meals" />
-            </div>
-            <div className="d-flex flex-column justify-content-center ms-5">
-              <p>
+        <div className="container pt-5">
+          <div className="row py-3">
+            <hr className="w-35 mx-auto" />
+            <h2 className="text-center">ABOUT US</h2>
+          </div>
+          <div className="row d-flex flex-md-row-reverse align-items-center pb-5">
+            <div className="col-md-6">
+              <p className="my-4 mx-auto">
                 At Tsuki no Yoru, we are dedicated to providing our customers
                 with an unforgettable Japanese culinary adventure. Our menu
                 features a wide variety of traditional Japanese dishes, prepared
@@ -39,15 +38,19 @@ export default function About() {
                 bite.
               </p>
             </div>
+            <div className="col-md-6">
+              <div className="py-5 ps-5 mt-4 image-wrap-left">
+                <img src={showcase} alt="Meals" />
+              </div>
+            </div>
           </div>
-          <hr className="mt-5 mb-4 me-0 mx-auto w-70" />
-          <div className="d-flex justify-content-end align-items-center me-0 mb-2">
-            <h2 className="me-5 pe-4">OUR HISTORY</h2>
-            <hr className="w-35 me-0 mt-1" />
+          <div className="row py-3">
+            <hr className="w-35 mx-auto" />
+            <h2 className="text-center">OUR HISTORY</h2>
           </div>
-          <div className="d-flex justify-content-end pt-3">
-            <div className="d-flex flex-column justify-content-center text-end me-5">
-              <p>
+          <div className="row d-flex align-items-center">
+            <div className="col-md-6">
+              <p className="text-end my-4 mx-auto">
                 Tsuki no Yoru was founded by Hiroshi Nakamura, who moved from
                 Japan to Australia at a young age. Growing up, he was always
                 fascinated by the rich culture and traditions of his homeland,
@@ -58,17 +61,19 @@ export default function About() {
                 those seeking an authentic taste of Japan.
               </p>
             </div>
-            <div className="d-flex pt-3">
-              <div className="py-4 ps-4 ms-5 image-wrap-right ">
+            <div className="col-md-6">
+              <div className="py-5 ps-5 mt-4 image-wrap-right ">
                 <img src={chef} alt="Chef" />
               </div>
             </div>
           </div>
-          <div className="my-5">
-            <hr className="d-flex justify-content-end m-0 w-35" />
-            <hr className="mt-5 w-70" />
-          </div>
         </div>
+
+        <div className="d-none d-md-block my-5">
+          <hr className="d-flex justify-content-end m-0 w-35" />
+          <hr className="mt-5 w-70" />
+        </div>
+        <br />
         <Footer />
       </div>
     </div>

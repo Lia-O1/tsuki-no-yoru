@@ -11,8 +11,8 @@ export default function Navbar() {
   return (
     <Fragment>
       <div className="container-fluid Navbar">
-        <nav className="navbar navbar-expand-lg fixed-top px-4 my-navbar">
-          <NavLink to="/" className="navbar-brand">
+        <nav className="navbar navbar-expand-lg fixed-top px-3 my-navbar">
+          <NavLink to="/" className="navbar-brand m-0">
             <img src={logo} alt="logo" />
           </NavLink>
           <button

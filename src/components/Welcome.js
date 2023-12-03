@@ -4,7 +4,7 @@ import "../styles/Welcome.css";
 
 export default function Welcome() {
   return (
-    <div className="d-flex justify-content-center align-items-center position-relative Welcome">
+    <div className="d-flex justify-content-center align-items-center Welcome">
       <div className="d-flex flex-column justify-content-center align-items-cente text-center bg">
         <h1 className="mb-0">TSUKI NO YORU</h1>
 
