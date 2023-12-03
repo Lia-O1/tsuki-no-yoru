@@ -5,7 +5,7 @@ export default function MenuSection({ title, items }) {
   return (
     <div className="MenuSection">
       <hr />
-      <div className="d-none d-md-flex position-absolute bookmark">
+      <div className="d-none d-lg-flex position-absolute bookmark">
         <hr className="m-0 h-30" />
         <span className="d-flex flex-column align-items-center justify-content-start text-uppercase px-1 pt-2 lh-sm bookmark-text">
           {title.split("").map((letter, index) => (
@@ -27,7 +27,13 @@ export default function MenuSection({ title, items }) {
               key={item.id}
               className="d-flex flex-wrap justify-content-between text-uppercase menu-item "
             >
-              <div className="px-4 py-3">{item.item}</div>
+              <div className="px-4 py-3">
+                {item.item}
+                <span className="d-none d-md-inline">
+                  {" "}
+                  {item.itemTranslated}
+                </span>
+              </div>
               <div className="px-4 py-3">{item.price}</div>
             </div>
           ))}
