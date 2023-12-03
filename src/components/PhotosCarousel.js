@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CircleLoader from "react-spinners/ClipLoader";
 import Carousel from "react-bootstrap/Carousel";
 import "../styles/PhotosCarousel.css";
-import meal1 from "../images/meal1-meat.jpg";
+import meal1 from "../images/meal1-Gyudon.jpg";
 import meal2 from "../images/meal2-lunch.jpg";
 import meal3 from "../images/meal3-sushi.jpg";
 import meal4 from "../images/meal4-sashimi.jpg";
@@ -33,7 +33,7 @@ export default function PhotosCarousel() {
       <Carousel className="pb-4">
         <Carousel.Item>
           <div className="d-flex justify-content-center carousel-item">
-            <img className="mx-5 mb-5" src={meal1} alt="Meat" />
+            <img className="mx-5 mb-5" src={meal1} alt="Gyudon" />
             <img
               className="d-none d-md-inline mx-5 mb-5"
               src={meal2}
@@ -48,7 +48,11 @@ export default function PhotosCarousel() {
         </Carousel.Item>
         <Carousel.Item>
           <div className="d-flex justify-content-center">
-            <img className="mx-5 mb-5" src={meal2} alt="Lunch" />
+            <img
+              className="mx-5 mb-5"
+              src={meal2}
+              alt="Lunch: a bowl of ramen and a plate of gyoza"
+            />
             <img
               className="d-none d-md-inline mx-5 mb-5"
               src={meal3}
@@ -82,12 +86,12 @@ export default function PhotosCarousel() {
             <img
               className="d-none d-md-inline mx-5 mb-5"
               src={meal1}
-              alt="Meat"
+              alt="Gyudon"
             />
             <img
               className="d-none d-lg-inline mx-5 mb-5"
               src={meal2}
-              alt="Lunch"
+              alt="Lunch: a bowl of ramen and a plate of gyoza"
             />
           </div>
         </Carousel.Item>
