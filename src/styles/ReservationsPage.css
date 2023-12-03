@@ -66,3 +66,15 @@
   background-color: rgba(0, 0, 0, 0.55);
   height: 30vh;
 }
+
+@media (max-width: 768px) {
+  .ReservationsPage h2 {
+    font-size: 36px;
+  }
+  .ReservationsPage {
+    font-size: 16px;
+  }
+  .ReservationsPage .formInput {
+    width: 80vw;
+  }
+}
