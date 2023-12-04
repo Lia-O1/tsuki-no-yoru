@@ -39,7 +39,7 @@ export default function About() {
               </p>
             </div>
             <div className="col-md-6">
-              <div className="py-5 ps-5 mt-4 image-wrap-left">
+              <div className="py-5 mt-4 image-wrap-left">
                 <img
                   src={showcase}
                   alt="Japanese meal with ramen, gyoza, and karaage"
@@ -65,7 +65,7 @@ export default function About() {
               </p>
             </div>
             <div className="col-md-6">
-              <div className="py-5 ps-5 mt-4 image-wrap-right ">
+              <div className="py-5 mt-4 image-wrap-right ">
                 <img src={chef} alt="Chef" />
               </div>
             </div>

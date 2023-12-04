@@ -35,11 +35,13 @@
 .About .image-wrap-left {
   border: 2px solid #fff;
   border-left: none;
+  padding-left: 9%;
 }
 
 .About .image-wrap-right {
   border: 2px solid #fff;
   border-right: none;
+  padding-left: 9%;
 }
 
 .About .bookmark-text {
