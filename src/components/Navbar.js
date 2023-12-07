@@ -29,7 +29,7 @@ export default function Navbar() {
           </button>
           <div
             className={`${
-              isOpen ? "collapse show " : "collapse"
+              isOpen ? "collapse show" : "collapse"
             } navbar-collapse`}
             id="navbarNav"
           >

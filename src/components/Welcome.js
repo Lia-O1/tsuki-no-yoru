@@ -5,7 +5,7 @@ import "../styles/Welcome.css";
 export default function Welcome() {
   return (
     <div className="d-flex justify-content-center align-items-center Welcome">
-      <div className="d-flex flex-column justify-content-center align-items-cente text-center bg">
+      <div className="d-flex flex-column justify-content-center align-items-center text-center bg">
         <h1 className="mt-5 mb-0">TSUKI NO YORU</h1>
         <hr className="b-block d-md-none" />
         <p className="mb-4 mx-auto">
