@@ -130,9 +130,9 @@ const ReservationForm = () => {
         <>
           <div className="d-flex flex-wrap justify-content-center my-5 form-gap">
             <Form.Group controlId="formName">
-              <Form.Label>Name</Form.Label>
+              <Form.Label className="text-uppercase">Name</Form.Label>
               <Form.Control
-                className="text-uppercase mb-2 formInput"
+                className="mb-2 formInput"
                 type="text"
                 name="name"
                 value={form.name}
@@ -142,9 +142,9 @@ const ReservationForm = () => {
             </Form.Group>
 
             <Form.Group controlId="formDate">
-              <Form.Label>Date</Form.Label>
+              <Form.Label className="text-uppercase">Date</Form.Label>
               <Form.Control
-                className="text-uppercase mb-2 formInput"
+                className="mb-2 formInput"
                 type="date"
                 name="date"
                 value={form.date}
@@ -154,9 +154,9 @@ const ReservationForm = () => {
             </Form.Group>
 
             <Form.Group controlId="formTime">
-              <Form.Label>Time</Form.Label>
+              <Form.Label className="text-uppercase">Time</Form.Label>
               <Form.Control
-                className="text-uppercase mb-2 formInput"
+                className="mb-2 formInput"
                 as="select"
                 name="time"
                 value={form.time}
@@ -179,9 +179,11 @@ const ReservationForm = () => {
             </Form.Group>
 
             <Form.Group controlId="formGuests">
-              <Form.Label>Number of Guests</Form.Label>
+              <Form.Label className="text-uppercase">
+                Number of Guests
+              </Form.Label>
               <Form.Control
-                className="text-uppercase mb-2 formInput"
+                className="mb-2 formInput"
                 type="number"
                 name="guests"
                 value={form.guests}
@@ -191,9 +193,9 @@ const ReservationForm = () => {
             </Form.Group>
 
             <Form.Group controlId="formEmail">
-              <Form.Label>Email</Form.Label>
+              <Form.Label className="text-uppercase">Email</Form.Label>
               <Form.Control
-                className="text-uppercase mb-2 formInput"
+                className="mb-2 formInput"
                 type="email"
                 name="email"
                 value={form.email}
@@ -203,9 +205,9 @@ const ReservationForm = () => {
             </Form.Group>
 
             <Form.Group controlId="formMobile">
-              <Form.Label>Mobile</Form.Label>
+              <Form.Label className="text-uppercase">Mobile</Form.Label>
               <Form.Control
-                className="text-uppercase mb-2 formInput"
+                className="mb-2 formInput"
                 type="tel"
                 name="mobile"
                 value={form.mobile}
@@ -229,12 +231,25 @@ const ReservationForm = () => {
       {showSummary && !showForm && (
         <div>
           <div className="mx-auto wrap p-3 my-5">
-            <p>Name: {form.name}</p>
-            <p>Date: {form.date}</p>
-            <p>Time: {form.time}</p>
-            <p>Number of Guests: {form.guests}</p>
-            <p>Email: {form.email}</p>
-            <p>Mobile: {form.mobile}</p>
+            <p>
+              <span className="text-uppercase">Name:</span> {form.name}
+            </p>
+            <p>
+              <span className="text-uppercase">Date:</span> {form.date}
+            </p>
+            <p>
+              <span className="text-uppercase">Time:</span> {form.time}
+            </p>
+            <p>
+              <span className="text-uppercase">Number of Guests:</span>{" "}
+              {form.guests}
+            </p>
+            <p>
+              <span className="text-uppercase">Email:</span> {form.email}
+            </p>
+            <p>
+              <span className="text-uppercase">Mobile:</span> {form.mobile}
+            </p>
           </div>
           <div className="d-flex justify-content-center ">
             <Button
