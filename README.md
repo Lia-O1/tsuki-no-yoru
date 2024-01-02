@@ -1,7 +1,8 @@
 # Project Title - Tsuki No Yoru
-A website for a Japanese restaurant with interactive menu and reservation form.
+A website for a Japanese restaurant with a dynamically rendered menu and reservation form.
 
-This project is a website for a Japanese restaurant. It features different menu sections, all rendered using a single reusable component with different props passed in to display varied content. This component is used on the Menu page, along with a photo carousel at the top. The Reservations page contains a form for booking a table. All fields will be validated and will show errors if the data is not valid.
+This project is a website for a Japanese restaurant. It features different menu sections, all rendered using a single reusable component with different props passed in to display varied content. This component is used on the Menu page, along with a photo carousel at the top. 
+The Reservations page contains a form for booking a table. All fields will be validated and will show errors if the data is not valid. The booking form is integrated with Firestore to store and manage booking data. The form fetches booked times from Firestore whenever the date changes and disables time options in the form if they are already booked. When the form is submitted, it adds the new booking to Firestore.
 
 ## Code Showcase
 This project showcases my skills in ReactJS. 
@@ -9,6 +10,7 @@ This project showcases my skills in ReactJS.
 - The photo carousel is responsive and is built using react-bootstrap. 
 - `formValidation.js` contains validation logic for each field, with regex used where necessary. Please note that the mobile regex works for Australian numbers.
 - UUIDv4 is used to create unique keys for data in `menuLists.js`.
+- Firestore is used for storing and managing booking data.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -22,6 +24,7 @@ This project uses the following dependencies which will be installed automatical
 - React-Bootstrap
 - React-Router-DOM
 - UUID
+- Firebase
 - And others (refer to `package.json` for the full list)
 
 ### Installing
