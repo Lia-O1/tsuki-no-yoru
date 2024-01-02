@@ -63,47 +63,13 @@ const ReservationForm = () => {
     event.preventDefault();
 
     let newErrors = {
-      name: "",
-      date: "",
-      time: "",
-      guests: "",
-      email: "",
-      mobile: "",
+      name: validateName(form.name),
+      date: validateDate(form.date),
+      time: validateTime(form.time),
+      guests: validateGuests(form.guests),
+      email: validateEmail(form.email),
+      mobile: validateMobile(form.mobile),
     };
-
-    if (!form.name) {
-      newErrors.name = "Please fill out this field.";
-    }
-    if (!form.date) {
-      newErrors.date = "Please fill out this field.";
-    }
-    if (!form.time) {
-      newErrors.time = "Please fill out this field.";
-    }
-    if (!form.guests) {
-      newErrors.guests = "Please fill out this field.";
-    } else {
-      const guests = Number(form.guests);
-      if (!Number.isInteger(guests) || guests <= 0) {
-        newErrors.guests = "Please enter a valid number of guests.";
-      }
-    }
-    if (!form.email) {
-      newErrors.email = "Please fill out this field.";
-    } else {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(form.email)) {
-        newErrors.email = "Please enter a valid email address.";
-      }
-    }
-    if (!form.mobile) {
-      newErrors.mobile = "Please fill out this field.";
-    } else {
-      const mobileRegex = /^04\d{8}$/;
-      if (!mobileRegex.test(form.mobile)) {
-        newErrors.mobile = "Please enter a valid Australian mobile number.";
-      }
-    }
 
     if (Object.values(newErrors).some((error) => error !== "")) {
       setErrors(newErrors);
