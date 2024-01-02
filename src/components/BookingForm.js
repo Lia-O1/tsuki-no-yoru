@@ -8,6 +8,8 @@ import {
   validateEmail,
   validateMobile,
 } from "../helpers/formValidation.js";
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { db } from "../index.js";
 
 const ReservationForm = () => {
   const [form, setForm] = useState({
@@ -26,11 +28,13 @@ const ReservationForm = () => {
     email: "",
     mobile: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
   const [showForm, setShowForm] = useState(true);
   const [showSummary, setShowSummary] = useState(false);
   const [showSubmitMessage, setShowSubmitMessage] = useState(false);
+  const [bookedTimes, setBookedTimes] = useState([]);
 
-  const handleChange = (event) => {
+  const handleChange = async (event) => {
     const { name, value } = event.target;
 
     let errorMessage = "";
@@ -38,6 +42,17 @@ const ReservationForm = () => {
       errorMessage = validateName(value);
     } else if (name === "date") {
       errorMessage = validateDate(value);
+
+      try {
+        const q = query(collection(db, "bookings"), where("date", "==", value));
+        const querySnapshot = await getDocs(q);
+        const bookedTimes = querySnapshot.docs.map((doc) => doc.data().time);
+        setBookedTimes(bookedTimes);
+      } catch (error) {
+        setErrorMessage(
+          `An error occurred while fetching booked times: ${error}. Please refresh the page and try again.`
+        );
+      }
     } else if (name === "time") {
       errorMessage = validateTime(value);
     } else if (name === "guests") {
@@ -84,10 +99,25 @@ const ReservationForm = () => {
     setShowForm(true);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setShowSummary(false);
-    setShowSubmitMessage(true);
+
+    try {
+      await addDoc(collection(db, "bookings"), {
+        date: form.date,
+        time: form.time,
+        guests: form.guests,
+        email: form.email,
+        mobile: form.mobile,
+      });
+
+      setShowSummary(false);
+      setShowSubmitMessage(true);
+    } catch (error) {
+      setErrorMessage(
+        `The error appeared while booking: ${error}. Please refresh the page and try again.`
+      );
+    }
   };
 
   return (
@@ -131,15 +161,33 @@ const ReservationForm = () => {
                 <option value="" disabled>
                   Select...
                 </option>
-                <option value="17:00">5:00 PM</option>
-                <option value="17:30">5:30 PM</option>
-                <option value="18:00">6:00 PM</option>
-                <option value="18:30">6:30 PM</option>
-                <option value="19:00">7:00 PM</option>
-                <option value="19:30">7:30 PM</option>
-                <option value="20:00">8:00 PM</option>
-                <option value="20:30">8:30 PM</option>
-                <option value="21:00">9:00 PM</option>
+                <option value="17:00" disabled={bookedTimes.includes("17:00")}>
+                  5:00 PM
+                </option>
+                <option value="17:30" disabled={bookedTimes.includes("17:30")}>
+                  5:30 PM
+                </option>
+                <option value="18:00" disabled={bookedTimes.includes("18:00")}>
+                  6:00 PM
+                </option>
+                <option value="18:30" disabled={bookedTimes.includes("18:30")}>
+                  6:30 PM
+                </option>
+                <option value="19:00" disabled={bookedTimes.includes("19:00")}>
+                  7:00 PM
+                </option>
+                <option value="19:30" disabled={bookedTimes.includes("19:30")}>
+                  7:30 PM
+                </option>
+                <option value="20:00" disabled={bookedTimes.includes("20:00")}>
+                  8:00 PM
+                </option>
+                <option value="20:30" disabled={bookedTimes.includes("20:30")}>
+                  8:30 PM
+                </option>
+                <option value="21:00" disabled={bookedTimes.includes("21:00")}>
+                  9:00 PM
+                </option>
               </Form.Control>
               {errors.time && <small>{errors.time}</small>}
             </Form.Group>
@@ -182,6 +230,11 @@ const ReservationForm = () => {
               {errors.mobile && <small>{errors.mobile}</small>}
             </Form.Group>
           </div>
+          {errorMessage && (
+            <div className="d-flex justify-content-center text-uppercase">
+              <small>{errorMessage}</small>
+            </div>
+          )}
           <Button
             className="d-flex justify-content-center text-uppercase form-button"
             onClick={handleNext}
