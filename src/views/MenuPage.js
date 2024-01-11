@@ -16,10 +16,10 @@ import "../styles/MenuPage.css";
 export default function MenuPage() {
   return (
     <div className="MenuPage">
-      <div className="wrap pt-5">
+      <div className="wrap">
         <Navbar />
         <br />
-        <div className="pt-5">
+        <div className="main-body mt-5">
           <div className="d-flex flex-column align-items-center justify-content-center mx-auto mb-4 bookmark">
             <hr className="bookmark-top-w mb-0" />
             <div className="d-flex">

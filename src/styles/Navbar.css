@@ -1,5 +1,25 @@
-.Navbar .my-navbar {
+.Navbar nav {
+  position: fixed;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Navbar ul {
+  list-style: none;
+  margin: 0;
+  width: 100%;
+}
+
+.Navbar li {
+  height: 9vh;
+}
+
+.Navbar li:first-child {
+  margin-right: auto;
+}
+
+.Navbar .nav-logo {
+  height: 100%;
 }
 
 .Navbar .nav-link {
@@ -8,30 +28,35 @@
   text-decoration: none;
   color: #fff;
   transition: all 250ms ease-in-out;
+  height: 100%;
 }
+
 .Navbar .nav-link:hover {
   color: #a86b4f;
 }
+
 .Navbar .nav-link.active {
   text-decoration: underline;
   color: #fff !important;
 }
 
 .Navbar img {
-  height: 60px;
+  height: 8vh;
 }
 
-.navbar-collapse {
-  display: flex;
-  justify-content: flex-end;
-  text-align: right;
+.Navbar .sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 75%;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.3);
 }
 
-.Navbar .white {
-  color: #fff;
+.Navbar .sidebar li,
+.Navbar .nav-logo {
+  width: 100%;
 }
-.navbar-toggler {
-  border: 0.5px solid white !important;
-  color: white !important;
-}
-/*  margin-right: 10vw; for responsive?*/

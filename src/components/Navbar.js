@@ -1,69 +1,114 @@
-import React, { Fragment, useState } from "react";
-import { NavLink, useMatch } from "react-router-dom";
-import LineIcon from "react-lineicons";
-import "../styles/Navbar.css";
+import React, { useState, useEffect } from "react";
+import { NavLink, useMatch, useLocation } from "react-router-dom";
+import { FiMenu } from "react-icons/fi";
+import { MdClose } from "react-icons/md";
 import logo from "../images/logo.png";
+import "../styles/Navbar.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
-    <Fragment>
-      <div className="container-fluid Navbar">
-        <nav className="navbar navbar-expand-lg fixed-top px-3 my-navbar">
-          <NavLink to="/" className="navbar-brand m-0">
+    <div className="Navbar">
+      <nav className="d-flex">
+        <ul className="d-flex justify-content-end align-items-center sticky-top ps-4">
+          <li>
+            {" "}
+            <NavLink to="/" className="nav-logo d-flex align-items-center">
+              <img src={logo} alt="logo" />
+            </NavLink>
+          </li>
+          <li className="d-none d-lg-flex">
+            <NavLink
+              to="/"
+              className={`nav-link d-flex align-items-center px-4 ${
+                useMatch("/") ? "active" : ""
+              }`}
+            >
+              HOME
+            </NavLink>
+          </li>
+          <li className="d-none d-lg-flex">
+            <NavLink
+              to="/menu"
+              className={`nav-link d-flex align-items-center px-4 ${
+                useMatch("/menu") ? "active" : ""
+              }`}
+            >
+              MENU
+            </NavLink>
+          </li>
+          <li className="d-none d-lg-flex">
+            <NavLink
+              to="/reservations"
+              className={`nav-link d-flex align-items-center px-4${
+                useMatch("/reservations") ? "active" : ""
+              }`}
+            >
+              RESERVATIONS
+            </NavLink>
+          </li>
+        </ul>
+        <a
+          className="d-flex d-lg-none align-items-center justify-content-end pe-4"
+          onClick={toggle}
+        >
+          <FiMenu size="36px" color="white" />
+        </a>
+      </nav>
+      <nav className="d-flex">
+        <ul
+          className={`sidebar flex-column justify-content-center align-items-center ${
+            isOpen ? "d-flex" : "d-none"
+          }`}
+        >
+          <li className="d-flex justify-content-center align-items-center">
             <img src={logo} alt="logo" />
-          </NavLink>
-          <button
-            onClick={toggle}
-            className={`navbar-toggler  ${isOpen ? "" : "collapsed"}`}
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <LineIcon name="menu" style={{ color: "white" }} />
-          </button>
-          <div
-            className={`${
-              isOpen ? "collapse show" : "collapse"
-            } navbar-collapse`}
-            id="navbarNav"
-          >
-            <ul className="navbar-nav">
-              <li className="nav-item px-3">
-                <NavLink
-                  to="/"
-                  className={`nav-link ${useMatch("/") ? "active" : ""}`}
-                >
-                  HOME
-                </NavLink>
-              </li>
-              <li className="nav-item px-3">
-                <NavLink
-                  to="/menu"
-                  className={`nav-link ${useMatch("/menu") ? "active" : ""}`}
-                >
-                  MENU
-                </NavLink>
-              </li>
-              <li className="nav-item px-3 ">
-                <NavLink
-                  to="/reservations"
-                  className={`nav-link ${
-                    useMatch("/reservations") ? "active" : ""
-                  }`}
-                >
-                  RESERVATIONS
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </Fragment>
+          </li>
+          <li className="d-flex justify-content-center align-items-center">
+            <a onClick={toggle}>
+              <MdClose size="36px" color="white" />
+            </a>
+          </li>
+          <li>
+            <NavLink
+              to="/"
+              className={`nav-link d-flex justify-content-center align-items-center ${
+                useMatch("/") ? "active" : ""
+              }`}
+            >
+              HOME
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/menu"
+              className={`nav-link d-flex justify-content-center align-items-center  ${
+                useMatch("/menu") ? "active" : ""
+              }`}
+            >
+              MENU
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/reservations"
+              className={`nav-link d-flex justify-content-center align-items-center ${
+                useMatch("/reservations") ? "active" : ""
+              }`}
+            >
+              RESERVATIONS
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
