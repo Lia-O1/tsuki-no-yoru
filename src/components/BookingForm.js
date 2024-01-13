@@ -133,6 +133,7 @@ const ReservationForm = () => {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
+                autocomplete="name"
               />
               <small>{errors.name || " "}</small>
             </Form.Group>
@@ -145,6 +146,7 @@ const ReservationForm = () => {
                 name="date"
                 value={form.date}
                 onChange={handleChange}
+                autocomplete="off"
               />
               {errors.date && <small>{errors.date}</small>}
             </Form.Group>
@@ -157,6 +159,7 @@ const ReservationForm = () => {
                 name="time"
                 value={form.time}
                 onChange={handleChange}
+                autocomplete="off"
               >
                 <option value="" disabled>
                   Select...
@@ -202,6 +205,7 @@ const ReservationForm = () => {
                 name="guests"
                 value={form.guests}
                 onChange={handleChange}
+                autocomplete="off"
               />
               {errors.guests && <small>{errors.guests}</small>}
             </Form.Group>
@@ -214,6 +218,7 @@ const ReservationForm = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
+                autocomplete="email"
               />
               {errors.email && <small>{errors.email}</small>}
             </Form.Group>
@@ -226,6 +231,7 @@ const ReservationForm = () => {
                 name="mobile"
                 value={form.mobile}
                 onChange={handleChange}
+                autocomplete="tel"
               />
               {errors.mobile && <small>{errors.mobile}</small>}
             </Form.Group>
