@@ -44,18 +44,18 @@
   margin: 0 auto;
   transition: all 550ms ease-in-out;
   font-size: 18px;
+  color: #fff;
 }
 
-.ReservationsPage .form-button:hover {
+.ReservationsPage .form-button:not(:disabled):hover {
   background: none;
   border: 2px solid #a86b4f;
   color: #a86b4f;
 }
 
 .ReservationsPage .form-button:disabled {
-  background: #a86b4f;
-  border: 2px solid #a86b4f;
-  color: #fff;
+  background: rgba(168, 107, 79, 0.6);
+  border: 2px solid rgba(168, 107, 79, 0.6);
 }
 
 .ReservationsPage .form-gap {

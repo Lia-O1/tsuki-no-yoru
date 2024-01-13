@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import {
   validateName,
   validateDate,
@@ -134,7 +134,7 @@ const ReservationForm = () => {
                 value={form.name}
                 onChange={handleChange}
               />
-              {errors.name && <small>{errors.name}</small>}
+              <small>{errors.name || " "}</small>
             </Form.Group>
 
             <Form.Group controlId="formDate">
@@ -235,7 +235,7 @@ const ReservationForm = () => {
               <small>{errorMessage}</small>
             </div>
           )}
-          <Button
+          <button
             className="d-flex justify-content-center text-uppercase form-button"
             onClick={handleNext}
             disabled={
@@ -244,7 +244,7 @@ const ReservationForm = () => {
             }
           >
             Next
-          </Button>
+          </button>
         </>
       )}
       {showSummary && !showForm && (
@@ -271,15 +271,15 @@ const ReservationForm = () => {
             </p>
           </div>
           <div className="d-flex justify-content-center ">
-            <Button
+            <button
               className="text-uppercase mx-2 form-button"
               onClick={handleBack}
             >
               Back
-            </Button>
-            <Button className="text-uppercase mx-2 form-button" type="submit">
+            </button>
+            <button className="text-uppercase mx-2 form-button" type="submit">
               Submit
-            </Button>
+            </button>
           </div>
         </div>
       )}

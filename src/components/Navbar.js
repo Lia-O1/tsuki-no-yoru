@@ -48,7 +48,7 @@ export default function Navbar() {
           <li className="d-none d-lg-flex">
             <NavLink
               to="/reservations"
-              className={`nav-link d-flex align-items-center px-4${
+              className={`nav-link d-flex align-items-center px-4 ${
                 useMatch("/reservations") ? "active" : ""
               }`}
             >
@@ -56,26 +56,26 @@ export default function Navbar() {
             </NavLink>
           </li>
         </ul>
-        <a
-          className="d-flex d-lg-none align-items-center justify-content-end pe-4"
+        <button
+          className="d-flex d-lg-none align-items-center justify-content-end pe-4 my-button-class"
           onClick={toggle}
         >
           <FiMenu size="36px" color="white" />
-        </a>
+        </button>
       </nav>
       <nav className="d-flex">
         <ul
-          className={`sidebar flex-column justify-content-center align-items-center ${
-            isOpen ? "d-flex" : "d-none"
+          className={`sidebar d-flex flex-column justify-content-center align-items-center ${
+            isOpen ? "open" : ""
           }`}
         >
           <li className="d-flex justify-content-center align-items-center">
             <img src={logo} alt="logo" />
           </li>
           <li className="d-flex justify-content-center align-items-center">
-            <a onClick={toggle}>
+            <button className="my-button-class" onClick={toggle}>
               <MdClose size="36px" color="white" />
-            </a>
+            </button>
           </li>
           <li>
             <NavLink

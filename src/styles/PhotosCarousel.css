@@ -1,3 +1,7 @@
+.PhotosCarousel {
+  position: relative;
+  z-index: 1 !important;
+}
 .PhotosCarousel img {
   height: 45vh;
   object-fit: contain;
