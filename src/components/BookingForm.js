@@ -104,6 +104,7 @@ const ReservationForm = () => {
 
     try {
       await addDoc(collection(db, "bookings"), {
+        name: form.name,
         date: form.date,
         time: form.time,
         guests: form.guests,
@@ -133,9 +134,24 @@ const ReservationForm = () => {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                autocomplete="name"
+                autoComplete="name"
               />
               <small>{errors.name || " "}</small>
+            </Form.Group>
+
+            <Form.Group controlId="formGuests">
+              <Form.Label className="text-uppercase">
+                Number of Guests
+              </Form.Label>
+              <Form.Control
+                className="mb-2 formInput"
+                type="number"
+                name="guests"
+                value={form.guests}
+                onChange={handleChange}
+                autoComplete="off"
+              />
+              {errors.guests && <small>{errors.guests}</small>}
             </Form.Group>
 
             <Form.Group controlId="formDate">
@@ -146,7 +162,7 @@ const ReservationForm = () => {
                 name="date"
                 value={form.date}
                 onChange={handleChange}
-                autocomplete="off"
+                autoComplete="off"
               />
               {errors.date && <small>{errors.date}</small>}
             </Form.Group>
@@ -159,7 +175,7 @@ const ReservationForm = () => {
                 name="time"
                 value={form.time}
                 onChange={handleChange}
-                autocomplete="off"
+                autoComplete="off"
               >
                 <option value="" disabled>
                   Select...
@@ -195,21 +211,6 @@ const ReservationForm = () => {
               {errors.time && <small>{errors.time}</small>}
             </Form.Group>
 
-            <Form.Group controlId="formGuests">
-              <Form.Label className="text-uppercase">
-                Number of Guests
-              </Form.Label>
-              <Form.Control
-                className="mb-2 formInput"
-                type="number"
-                name="guests"
-                value={form.guests}
-                onChange={handleChange}
-                autocomplete="off"
-              />
-              {errors.guests && <small>{errors.guests}</small>}
-            </Form.Group>
-
             <Form.Group controlId="formEmail">
               <Form.Label className="text-uppercase">Email</Form.Label>
               <Form.Control
@@ -218,7 +219,7 @@ const ReservationForm = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                autocomplete="email"
+                autoComplete="email"
               />
               {errors.email && <small>{errors.email}</small>}
             </Form.Group>
@@ -231,7 +232,7 @@ const ReservationForm = () => {
                 name="mobile"
                 value={form.mobile}
                 onChange={handleChange}
-                autocomplete="tel"
+                autoComplete="tel"
               />
               {errors.mobile && <small>{errors.mobile}</small>}
             </Form.Group>
