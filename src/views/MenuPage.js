@@ -20,7 +20,10 @@ export default function MenuPage() {
         <Navbar />
         <br />
         <div className="main-body mt-5">
-          <div className="d-flex flex-column align-items-center justify-content-center mx-auto mb-4 bookmark">
+          <div
+            className="d-flex flex-column align-items-center justify-content-center mx-auto mb-4 bookmark"
+            aria-hidden="true"
+          >
             <hr className="bookmark-top-w mb-0" />
             <div className="d-flex">
               <hr className="h-15 m-0" />
@@ -34,7 +37,7 @@ export default function MenuPage() {
             </div>
           </div>
           <h2 className="text-center pt-2 pb-2">MENU</h2>
-          <hr className="w-35 mx-auto mb-5" />
+          <hr className="w-35 mx-auto mb-5" aria-hidden="true" />
           <PhotosCarousel />
           <div className="mb-4" />
           <MenuSection title="Entrees" items={entrees} />

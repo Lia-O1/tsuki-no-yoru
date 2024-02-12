@@ -8,7 +8,10 @@ export default function About() {
   return (
     <div className="About">
       <div className="wrap">
-        <div className="d-none d-md-flex position-absolute bookmark">
+        <div
+          className="d-none d-md-flex position-absolute bookmark"
+          aria-hidden="true"
+        >
           <hr className="h-15 m-0" />
           <span className="d-flex flex-column align-items-center justify-content-start px-1 pt-2 lh-sm bookmark-text">
             <span>月</span>
@@ -72,7 +75,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="d-none d-md-block my-5">
+        <div className="d-none d-md-block my-5" aria-hidden="true">
           <hr className="d-flex justify-content-end m-0 w-35" />
           <hr className="mt-5 w-70" />
         </div>
